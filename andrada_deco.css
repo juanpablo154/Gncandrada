@@ -24,7 +24,7 @@ a {
 header {
     background-color: #013a63; /* Azul oscuro */
     color: #ffffff; /* Blanco */
-    padding: 20px 0;
+    padding: 10px 0; /* Reducido el padding para hacer la barra más estrecha */
     position: fixed;
     width: 100%;
     top: 0;
@@ -32,34 +32,40 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Ajustar el contenedor del header para que ocupe menos espacio */
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px; /* Añadí padding para no tocar los bordes */
 }
 
-header .logo h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #ffffff;
+/* Estilo del logo */
+header .logo img {
+    max-width: 120px; /* Tamaño del logo */
+    height: auto;
 }
 
+/* Estilo del menú de navegación */
 header nav ul {
-    display: flex;
-    list-style-type: none;
+    display: flex; /* Hace que los elementos estén en línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    list-style-type: none; /* Quita los puntos de la lista */
     margin: 0;
     padding: 0;
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin: 0 15px; /* Espaciado entre los elementos */
 }
 
 header nav ul li a {
     color: #ffffff; /* Blanco */
-    text-decoration: none;
-    font-weight: 500;
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 500; /* Peso del texto */
     transition: color 0.3s;
+    font-size: 18px; /* Tamaño de fuente */
 }
 
 header nav ul li a:hover {
@@ -76,7 +82,7 @@ header nav ul li a:hover {
     text-align: center;
     color: #000000; /* Color negro para el texto */
     padding: 0 20px;
-    margin-top: 80px; /* Para compensar el header fijo */
+    margin-top: 120px; /* Aumenté el margen para compensar la altura de la barra */
 }
 
 .hero-content {
