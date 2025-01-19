@@ -12,7 +12,6 @@
 <body>
     <header>
         <div class="container">
-            <!-- Reemplazo del texto por un logo -->
             <div class="logo">
                 <a href="#inicio">
                     <img src="logo_gnc.png" alt="Logo GNC Andrada" class="logo-img">
@@ -23,22 +22,45 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Sección Hero -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h2> GNC ANDRADA</h2>
-            <p>El futuro esta en gnc.</p>
+            <p>El futuro está en gnc.</p>
             <a href="#contacto" class="cta-button">¡Escribinos!</a>
         </div>
     </section>
 
-    <!-- Sección de Servicios -->
+    <section class="gallery" id="galeria">
+        <h2>Galería de Imágenes</h2>
+        <div class="gallery-container">
+            <div class="slider" id="slider">
+                <div class="slider-item">
+                    <img src="imágen 1.png" alt="Imagen 1">
+                </div>
+                <div class="slider-item">
+                    <img src="imágen 2.png" alt="Imagen 2">
+                </div>
+                <div class="slider-item">
+                    <img src="imagen 3.png" alt="Imagen 3">
+                </div>
+                <div class="slider-item">
+                    <img src="imagen 4.png " alt="Imagen 4">
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="prev" id="prevBtn">&#10094;</button>
+            <button class="next" id="nextBtn">&#10095;</button>
+        </div>
+    </section>
+
     <section class="services" id="servicios">
         <h2>Servicios de GNC</h2>
         <div class="service-item">
@@ -55,13 +77,32 @@
         </div>
     </section>
 
-    <!-- Sección Nosotros -->
     <section class="about" id="nosotros">
         <h2>Nosotros</h2>
         <p>GNC Andrada cuenta con personal capacitado y los mejores equipos para brindarte un servicio de calidad en la instalación y mantenimiento de GNC.</p>
     </section>
 
-    <!-- Sección de Contacto -->
+    <section class="testimonials" id="testimonios">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-item">
+                <p class="testimonial-text">"Muy buen taller "</p>
+                <h4 class="testimonial-name">Sergio Suárez.</h4>
+                <p class="testimonial-job">Cliente Satisfecho</p>
+            </div>
+            <div class="testimonial-item">
+                <p class="testimonial-text">" Excelente atención "</p>
+                <h4 class="testimonial-name">Diego Rinaldi.</h4>
+                <p class="testimonial-job">Cliente Satisfecho</p>
+            </div>
+            <div class="testimonial-item">
+                <p class="testimonial-text">"Muy buen taller, especializado en GNC, Atendido por su dueño y el hijo, con muy buena predisposición y amabilidad, recomendable 100%"</p>
+                <h4 class="testimonial-name">Claudio Osvaldo Mazzuco.</h4>
+                <p class="testimonial-job">Cliente Satisfecho</p>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="contacto">
         <h2>Contacto</h2>
         <a href="https://wa.me/543547530632" class="whatsapp-button">
@@ -84,8 +125,40 @@
     </section>
 
     <footer>
-    <p>&copy; 2025 GNC Andrada | Todos los derechos reservados</p>
-</footer>
+        <p>&copy; 2025 GNC Andrada | Todos los derechos reservados</p>
+    </footer>
 
+    <script>
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slider = document.getElementById('slider');
+        let index = 0;
+
+        const updateSliderPosition = () => {
+            const totalSlides = document.querySelectorAll('.slider-item').length;
+            if (index < 0) {
+                index = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                index = 0;
+            }
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        };
+
+        prevBtn.addEventListener('click', () => {
+            index--;
+            updateSliderPosition();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            index++;
+            updateSliderPosition();
+        });
+
+        // Opcional: Hacer que el slider se desplace automáticamente
+        setInterval(() => {
+            index++;
+            updateSliderPosition();
+        }, 3000);
+    </script>
 </body>
 </html>
