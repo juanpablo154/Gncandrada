@@ -159,6 +159,55 @@ h2::after {
     margin-top: 10px;
 }
 
+/* Estilos para la sección de Testimonios */
+.testimonials {
+    background-color: #ffffff;
+    padding: 50px 20px;
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    color: #013a63;
+    margin-bottom: 20px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.testimonial-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    color: #013a63;
+}
+
+.testimonial-job {
+    color: #888;
+}
+
 /* Estilos para la sección de Contacto */
 .contact {
     background-color: #f4f4f4;
@@ -268,5 +317,83 @@ footer {
 
     .service-item {
         max-width: 100%;
+    }
+}
+
+/* Estilos para la galería */
+.gallery {
+    background-color: #ffffff; /* Fondo blanco para la galería */
+    padding: 50px 20px;
+}
+
+.gallery h2 {
+    font-size: 2.5em;
+    color: #013a63; /* Azul oscuro */
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Evita que las imágenes se desborden fuera del contenedor */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Transición suave para el desplazamiento */
+}
+
+.slider-item {
+    min-width: 100%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.slider-item img {
+    width: 100%; /* Las imágenes se adaptan al ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.controls button {
+    background-color: #ffeb3b; /* Amarillo */
+    color: #013a63; /* Azul oscuro */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0 10px;
+}
+
+.controls button:hover {
+    background-color: #ffd700; /* Amarillo más claro */
+    transform: scale(1.1);
+}
+
+.controls button:focus {
+    outline: none; /* Elimina el borde de enfoque por defecto */
+}
+
+/* Diseño responsivo para la galería */
+@media (max-width: 768px) {
+    .gallery h2 {
+        font-size: 2em; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .slider-item img {
+        width: 100%;
+    }
+
+    .controls button {
+        font-size: 20px;
+        padding: 8px 16px;
     }
 }
